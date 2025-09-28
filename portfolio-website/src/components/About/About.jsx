@@ -28,7 +28,6 @@ const About = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h3>Who I am</h3>
             <p>
               I am a Computer Engineering student at Kathmandu University with a passion for technology and innovation. Skilled in web and app development, I enjoy creating efficient and user-friendly solutions. What started as curiosity about the internet has grown into a commitment to building impactful digital experiences.
             </p>
@@ -82,7 +81,7 @@ const About = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h3>What I Do</h3>
+          <h3>My Expertise</h3>
           <div className="services-grid">
             <div className="service-card">
               <div className="service-icon">
