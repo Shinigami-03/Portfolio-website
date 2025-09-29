@@ -55,8 +55,16 @@
 }
 
 .skill-name {
-  font-weight: 500;
+  font-weight: 600;
   margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.skill-icon {
+  margin-right: 10px;
+  font-size: 1.5rem;
+  color: var(--primary-color);
 }
 
 .skill-bar {

@@ -1,16 +1,18 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaCode, FaServer, FaMobile, FaDatabase } from 'react-icons/fa';
+import { FaCode, FaServer, FaMobile, FaDatabase, FaReact, FaJs, FaPython, FaCss3Alt, FaDatabase as FaSQL } from 'react-icons/fa';
+import { SiDart, SiFirebase, SiFlutter } from 'react-icons/si';
 import './About.css';
 
 const About = () => {
   const skills = [
-    { name: 'React', level: 90 },
-    { name: 'JavaScript', level: 85 },
-    { name: 'Flutter/Dart', level: 80 },
-    { name: 'Python', level: 85 },
-    { name: 'CSS', level: 80 },
-    { name: 'SQL', level: 75 },
+    { name: 'React', level: 80, icon: <FaReact /> },
+    { name: 'JavaScript', level: 80, icon: <FaJs /> },
+    { name: 'Flutter/Dart', level: 80, icon: <SiFlutter /> },
+    { name: 'Python', level: 70, icon: <FaPython /> },
+    { name: 'CSS', level: 70, icon: <FaCss3Alt /> },
+    { name: 'SQL', level: 40, icon: <FaSQL /> },
+    { name: 'Firebase', level: 50, icon: <SiFirebase /> },
   ];
 
   return (
@@ -58,7 +60,10 @@ const About = () => {
           <div className="skills-grid">
             {skills.map((skill, index) => (
               <div className="skill" key={index}>
-                <div className="skill-name">{skill.name}</div>
+                <div className="skill-name">
+                  <span className="skill-icon">{skill.icon}</span>
+                  {skill.name}
+                </div>
                 <div className="skill-bar">
                   <motion.div 
                     className="skill-level"
@@ -95,7 +100,7 @@ const About = () => {
                 <FaServer />
               </div>
               <h4>Backend Development</h4>
-              <p>Building robust server-side applications and APIs using Node.js and Express.</p>
+              <p>Building robust server-side applications and APIs using Python (with frameworks such as Flask or Django).</p>
             </div>
             <div className="service-card">
               <div className="service-icon">
