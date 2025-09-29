@@ -81,18 +81,20 @@ const Contact = () => {
       setIsSubmitting(true);
       setSubmitError(false);
 
-      // ✅ FIX: Match keys with EmailJS template variables
+      // Direct email configuration with template variables matching EmailJS template
       const templateParams = {
-        name: formData.name,       // matches {{name}}
-        email: formData.email,     // matches {{email}}
-        title: formData.subject,   // matches {{title}}
-        message: formData.message  // add {{message}} to template if you want to display it
+        name: formData.name,
+        email: formData.email,
+        title: formData.subject,
+        message: formData.message,
       };
-
+      
+      // Using emailjs.send directly with form data
       emailjs.send(
-        'service_portfolio', // Your EmailJS service ID
-        'template_qvsh5z7',  // Your EmailJS template ID
-        templateParams
+        process.env.REACT_APP_EMAILJS_SERVICE_ID || 'service_portfolio',
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID || 'template_qvsh5z7',
+        templateParams,
+        process.env.REACT_APP_EMAILJS_PUBLIC_KEY
       )
         .then((response) => {
           console.log('✅ Email sent successfully!', response);
