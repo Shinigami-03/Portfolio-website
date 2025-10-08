@@ -24,10 +24,11 @@
 }
 
 .about-image img {
-  width: 100%;
+  width: 60%;
   height: auto;
   display: block;
   transition: transform 0.5s ease;
+  margin: 0 auto;
 }
 
 .about-image:hover img {

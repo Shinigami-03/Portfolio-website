@@ -27,7 +27,7 @@ const Navbar = () => {
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="navbar-container container">
         <Link to="home" className="navbar-logo" onClick={closeMobileMenu} smooth={true} duration={500}>
-          <span>Aryan Khanal</span>
+          <span>Portfolio</span>
         </Link>
 
         <div className="menu-icon" onClick={handleClick}>

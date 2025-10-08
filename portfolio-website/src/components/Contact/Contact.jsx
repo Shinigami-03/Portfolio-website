@@ -74,19 +74,27 @@ const Contact = () => {
     }
   };
 
+  const sanitizeInput = (input) => {
+    // Remove script tags and encode special characters
+    return input.replace(/<script.*?>.*?<\/script>/gi, '')
+      .replace(/[&<>"]/g, function (c) {
+        return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];
+      });
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-
+  
     if (validateForm()) {
       setIsSubmitting(true);
       setSubmitError(false);
-
+  
       // Direct email configuration with template variables matching EmailJS template
       const templateParams = {
-        name: formData.name,
-        email: formData.email,
-        title: formData.subject,
-        message: formData.message,
+        name: sanitizeInput(formData.name),
+        email: sanitizeInput(formData.email),
+        title: sanitizeInput(formData.subject),
+        message: sanitizeInput(formData.message),
       };
       
       // Using emailjs.send directly with form data
