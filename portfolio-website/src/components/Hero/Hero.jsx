@@ -13,6 +13,9 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
+          <div className="hero-logo">
+            <img src={process.env.PUBLIC_URL + '/website-logo.png'} alt="Logo" className="circle-logo" />
+          </div>
           <h1>Hi, I'm <span className="highlight">Aryan Khanal</span></h1>
           <h2>Full Stack Developer & Mobile App Developer</h2>
           <p>I build exceptional digital experiences that make an impact</p>
